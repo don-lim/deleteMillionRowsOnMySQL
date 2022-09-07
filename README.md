@@ -2,7 +2,7 @@
 
 Deleting rows actually take longer time than inserting rows. Deleting millions of rows of data on an active server with many concurrent users is not easy at all. You may paralyze the server for a long time if you use a regular delete command.
 
-- Running the following sql command will create an event that will delete one million rows every 5 minutes.
+- Running the following sql command will create an event that will delete one million rows every 5 minutes. Make sure you enable scheduler from PHPMyAdmin or a terminal globally after logged in as the main user of MySQL. `SET GLOBAL event_scheduler = ON;`
 
 createEventForDeleteMillionRowsSimpleLoop.sql
 
@@ -10,4 +10,4 @@ createEventForDeleteMillionRowsSimpleLoop.sql
 
 createProcedureForDeleteMillionRowsWithPause.sql
 
-* You shouldn't use `WHERE id = "12345"` if the id is an integer. It will waste time in finding strings and integer. Be sure to include `ORDER BY id` because it will shorten the searching time. 
+* You shouldn't use `WHERE id = "12345"` if the id is an integer. It will waste time in finding both strings and integer if you use double quotes. Be sure to include `ORDER BY id` because it will shorten the transaction time. 
