@@ -1,4 +1,4 @@
-# deleteMillionRowsOnMySQL
+# elete Million Rows On MySQL
 
 Deleting rows actually take longer time than inserting rows. Deleting millions of rows of data on an active server with many concurrent users is not easy at all. You may paralyze the server for a long time if you use a regular delete command.
 
