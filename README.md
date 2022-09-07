@@ -2,7 +2,7 @@
 
 Deleting rows actually take longer time than inserting rows. Deleting millions of rows of data on an active server with many concurrent users is not an easy task. You may paralyze the server for a long time effectively shutting down the system if you use a regular delete command.
 
-- Running the following sql command will create an event that will delete one million rows every 5 minutes. Make sure you enable scheduler from PHPMyAdmin or a terminal globally after logged in as the main user of MySQL. `SET GLOBAL event_scheduler = ON;`
+- Running the following sql command will create an event that will delete one million rows every 5 minutes. Make sure you enable the event scheduler from PHPMyAdmin or a terminal globally after logged in as the main user of MySQL. `SET GLOBAL event_scheduler = ON;` Most default settings automatically turn off the event scheduler when you reboot the system. So, you need to turn on the event scheduler every time you reboot.
 
 createEventForDeleteMillionRowsSimpleLoop.sql
 
